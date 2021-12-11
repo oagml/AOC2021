@@ -32,10 +32,19 @@ print(f"The total distance to the mean is: {total_distance}")
 
 #Part 2 -----------------------------------------------------------
 
+total_distance = 0
+for value in input_list:
+    partial_sum = 0
+    for i in range(abs(value - mean) + 1):
+        partial_sum += i
+
+    total_distance += partial_sum
+    
+
+print(f"The total distance is {total_distance}")
 
 #Plot the graph
 mean_y_axis = [mean]*(len(input_list))
 median_y_axis = [median]*(len(input_list))
 plt.plot(input_list, 'ro')
-plt.plot(x_axis, median_y_axis)
 plt.show()
